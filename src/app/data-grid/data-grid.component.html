@@ -1,0 +1,55 @@
+<div class="data-grid-box">
+    <div class="data-grid-box-header">
+        <div>
+            <button class="button_121" (click)="onBtn121Click()">Button_121</button>
+        </div>
+        <div class="header-form-box">
+            <form>
+                <fieldset>
+                    <legend>GB Text 1</legend>
+                    <p>
+                        <label for="label2">Label 2</label>
+                        <input type="text" id="label2" name="label2" [(ngModel)]="formData.label2">
+                    </p>
+                    <p>
+                        <label for="label3">Label 3</label>
+                        <input type="text" id="label3" name="label3" [(ngModel)]="formData.label3">
+                    </p>
+                    <p>
+                        <label for="label4">Label 4</label>
+                        <input type="text" id="label4" name="label4"  [(ngModel)]="formData.label4">
+                        <button type="button" class="button_process" (click)="onProcessClick()" >Process</button>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+        <div [innerHTML]="screenContent"></div>
+    </div>
+    <table border="1">
+        <thead>
+            <th class="selector-th"></th>
+            <th (click)="sortData(i)" *ngFor="let col of columns; let i = index">{{col.name}}</th>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let row of data;let i = index" [class]="rowClasses(row)" >
+                <td class="selector-box">
+                    <button type="button" (click)="toggleSelected(row,i, $event)">
+                        &#8250;
+                    </button>
+                </td>
+                <td *ngFor="let v of row" (click)="onRowTdClick(row)">
+                    {{v}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button
+        class="button_download"
+        type="button" 
+        (click)="downloadSelected()" 
+        *ngIf="selectedRows.length"
+    >
+        Download Selected
+    </button>
+  </div>

@@ -1,0 +1,115 @@
+.data-grid-box{
+    .button_121{
+        margin-top: 50px;
+        color: red;
+        background-color: blue;
+        border-radius: 10px;
+        outline: 0;
+        border: 0;
+        padding:5px 10px;
+    }
+    .button_process{
+        color: green;
+        background-color: white;
+        border-radius: 10px;
+        outline: 0;
+        border: 1px solid green;
+        padding:5px 10px;
+        margin-left: 5px;
+    }
+    .data-grid-box-header{
+        display: flex;
+        > div{
+            padding:0 30px;
+        }
+        .header-form-box label{
+            min-width: 90px;
+            display: inline-block;
+        }
+        #process-btn{
+            margin-left: 10px;
+        }
+    }
+    table{
+        margin-top: 20px;
+        min-width: 800px;
+        border-collapse: collapse;
+        border-color: #ddd;
+
+        tbody,thead{
+            display:block;
+        }
+        tbody{
+            height: 500px;
+            overflow-y: auto;
+        }
+        td,th{
+            width: 100px;
+            text-align: left;
+
+        }
+        th{
+            font-weight: normal;
+            font-size: 15px;
+            border-bottom:0;
+            &.selector-th{
+                width: 20px;
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        tr.text-red{
+            td {
+                color: red;
+            }
+        }
+        tr.text-green{
+            td {
+                color: green;
+            }
+        }
+        tr.text-blue{
+            td {
+                color: blue;
+            }
+        }
+        tr.bg-white{
+            td {
+                background-color: white;
+            }
+        }
+        tr.bg-red{
+            td {
+                background-color: red;
+            }
+        }
+        tr{
+            td.selector-box{
+                color:black;
+                background-color: white;
+                width: 20px;
+                min-width: none;
+                button{
+                    border:0;
+                    background-color: transparent;
+                    font-weight: bold;
+                    font-size: 20px;
+                    &:hover{
+                        background-color: rgba(0, 0, 255, 0.657);
+                        color: white;
+                    }
+                }
+            }
+            &.selected {
+                td.selector-box{
+                    button{
+                    background-color: blue;
+                    color:white !important;
+                    }
+                }
+            }
+        }
+    }
+
+}
